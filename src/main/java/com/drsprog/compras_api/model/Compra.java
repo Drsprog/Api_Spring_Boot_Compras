@@ -13,7 +13,11 @@ import java.util.List;
  */
 
 @Entity
-@Table(name = "COMPRA")
+@Table(name = "COMPRA",
+       indexes = {
+        @Index(name = "IDX_COMPRA_USUARIO", columnList = "ID_USUARIO")
+    }
+)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -53,5 +57,13 @@ public class Compra {
      */
     @Column(name = "TOTAL", nullable = false)
     private BigDecimal total;
+
+    /**
+     * Método para agregar un detalle de compra a la compra
+     */
+    public void agregarDetalle(DetalleCompra detalle) {
+        detalles.add(detalle);
+        detalle.setCompra(this);
+    }
 
 }
