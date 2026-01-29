@@ -1,4 +1,4 @@
-package com.drsprog.compras_api.model;
+package com.drsprog.compras_api.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

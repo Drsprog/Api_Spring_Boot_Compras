@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521/COMPRASDB
+    url: jdbc:oracle:thin:@localhost:1521/XEPDB1
     username: compras
     password: compras
     driver-class-name: oracle.jdbc.OracleDriver
@@ -14,5 +14,5 @@ spring:
     show-sql: true
     properties:
       hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.OracleDialect
+        # format_sql: true version legible pero con warning amarillo
+        "[format_sql]": true
