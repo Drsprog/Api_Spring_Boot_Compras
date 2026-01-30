@@ -2,12 +2,14 @@ package com.drsprog.compras_api.service;
 
 import java.util.List;
 
+import com.drsprog.compras_api.DTOs.UsuarioRequest;
+import com.drsprog.compras_api.DTOs.UsuarioResponse;
 import com.drsprog.compras_api.entity.Usuario;
 
 public interface UsuarioService {
 
      // Crear un nuevo usuario
-    Usuario crearUsuario(Usuario usuario);
+    UsuarioResponse crearUsuario(UsuarioRequest usuario);
 
     // Obtener usuario por ID
     Usuario obtenerUsuarioPorId(Long id);

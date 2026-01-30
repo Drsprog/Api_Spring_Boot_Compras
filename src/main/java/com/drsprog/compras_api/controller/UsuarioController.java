@@ -1,7 +1,11 @@
 package com.drsprog.compras_api.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.drsprog.compras_api.DTOs.UsuarioRequest;
+import com.drsprog.compras_api.DTOs.UsuarioResponse;
 import com.drsprog.compras_api.entity.Usuario;
 import com.drsprog.compras_api.service.UsuarioService;
 
@@ -17,13 +21,20 @@ public class UsuarioController {
 
     // Crear usuario
     @PostMapping
-    public ResponseEntity<Usuario> crearUsuario(@RequestBody Usuario usuario) {
-        Usuario usuarioCreado = usuarioService.crearUsuario(usuario);
-        return ResponseEntity.ok(usuarioCreado);
+    public ResponseEntity<UsuarioResponse> crearUsuario(@RequestBody UsuarioRequest request) {
+        UsuarioResponse response = usuarioService.crearUsuario(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+    
+    // Actualizar usuario
+    @PutMapping("/{id}")
+    public ResponseEntity<Usuario> actualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
+        Usuario actualizado = usuarioService.actualizarUsuario(id, usuario);
+        return ResponseEntity.ok(actualizado);
     }
 
     //  Obtener usuario por ID
-    @GetMapping("/usuarios/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Usuario> obtenerUsuarioPorId(@PathVariable Long id) {
         Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
         return ResponseEntity.ok(usuario);

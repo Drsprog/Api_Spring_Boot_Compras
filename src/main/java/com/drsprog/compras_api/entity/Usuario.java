@@ -46,4 +46,10 @@ public class Usuario {
     @Column(name = "FECHA_CREACION", nullable = false)
     @Builder.Default
     private LocalDateTime fechaCreacion = LocalDateTime.now();
+
+    @PrePersist
+    public void prePersist() {
+        this.fechaCreacion = LocalDateTime.now();
+    }
+
 }
