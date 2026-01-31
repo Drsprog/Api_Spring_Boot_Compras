@@ -18,23 +18,16 @@ import com.drsprog.compras_api.repository.CompraRepository;
 import com.drsprog.compras_api.repository.UsuarioRepository;
 import com.drsprog.compras_api.service.CompraService;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor //Crea el constructor con los campos finales
 public class CompraServiceImpl implements CompraService {
 
     private final UsuarioRepository usuarioRepository;
     private final CarritoRepository carritoRepository;
     private final CompraRepository compraRepository;
     private final ArticuloRepository articuloRepository;
-
-    public CompraServiceImpl(UsuarioRepository usuarioRepository,
-            CarritoRepository carritoRepository,
-            CompraRepository compraRepository,
-            ArticuloRepository articuloRepository) {
-        this.usuarioRepository = usuarioRepository;
-        this.carritoRepository = carritoRepository;
-        this.compraRepository = compraRepository;
-        this.articuloRepository = articuloRepository;
-    }
 
     @Override
     @Transactional

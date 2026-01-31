@@ -2,18 +2,18 @@ package com.drsprog.compras_api.controller;
 
 import com.drsprog.compras_api.entity.Compra;
 import com.drsprog.compras_api.service.CompraService;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/compras")
+@RequiredArgsConstructor
 public class CompraController {
     private final CompraService compraService;
 
-    public CompraController(CompraService compraService) {
-        this.compraService = compraService;
-    }
-    
     /**
      * Endpoint para realizar la compra del carrito de un usuario
      * POST /compras/{usuarioId}

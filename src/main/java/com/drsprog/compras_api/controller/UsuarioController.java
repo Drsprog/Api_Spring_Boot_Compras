@@ -9,15 +9,14 @@ import com.drsprog.compras_api.DTOs.UsuarioResponse;
 import com.drsprog.compras_api.entity.Usuario;
 import com.drsprog.compras_api.service.UsuarioService;
 
+import lombok.RequiredArgsConstructor;
+
 
 @RestController
 @RequestMapping("/usuarios")
+@RequiredArgsConstructor
 public class UsuarioController {
     private final UsuarioService usuarioService;
-
-    public UsuarioController(UsuarioService usuarioService) {
-        this.usuarioService = usuarioService;
-    }
 
     // Crear usuario
     @PostMapping

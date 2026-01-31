@@ -12,14 +12,13 @@ import com.drsprog.compras_api.exception.UsuarioNotFoundException;
 import com.drsprog.compras_api.repository.UsuarioRepository;
 import com.drsprog.compras_api.service.UsuarioService;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor //Crea el constructor con los campos finales
 public class UsuarioServiceImpl implements UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
-
-    public UsuarioServiceImpl(UsuarioRepository usuarioRepository) {
-        this.usuarioRepository = usuarioRepository;
-    }
 
     @Override
     @Transactional
