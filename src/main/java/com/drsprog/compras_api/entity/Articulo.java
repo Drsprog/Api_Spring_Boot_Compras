@@ -43,4 +43,17 @@ public class Articulo {
     @Column(name = "FECHA_CREACION", nullable = false)
     @Builder.Default
     private LocalDateTime fechaCreacion = LocalDateTime.now();
+
+    @PrePersist
+    public void prePersist() {
+        if (activo == null) {
+            activo = true;
+        }
+        if (stock == null) {
+            stock = 0;
+        }
+        if (fechaCreacion == null) {
+            fechaCreacion = LocalDateTime.now();
+        }
+    }
 }
