@@ -45,7 +45,7 @@ public class CompraServiceImpl implements CompraService {
             throw new RuntimeException("Carrito vacío");
         }
 
-        // 3️⃣ Crear nueva compra usando builder
+        // Crear nueva compra usando builder
         Compra compra = Compra.builder()
                 .usuario(usuario)
                 .fechaCompra(LocalDateTime.now())
@@ -54,7 +54,7 @@ public class CompraServiceImpl implements CompraService {
 
         BigDecimal totalCompra = BigDecimal.ZERO;
 
-        // 4️⃣ Copiar detalles del carrito a la compra
+        // Copiar detalles del carrito a la compra
         for (DetalleCarrito detalleCarrito : carrito.getDetalles()) {
             Articulo articulo = detalleCarrito.getArticulo();
 

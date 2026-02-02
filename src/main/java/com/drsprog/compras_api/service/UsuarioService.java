@@ -2,8 +2,8 @@ package com.drsprog.compras_api.service;
 
 import java.util.List;
 
-import com.drsprog.compras_api.DTOs.UsuarioRequest;
-import com.drsprog.compras_api.DTOs.UsuarioResponse;
+import com.drsprog.compras_api.dto.UsuarioRequest;
+import com.drsprog.compras_api.dto.UsuarioResponse;
 import com.drsprog.compras_api.entity.Usuario;
 
 public interface UsuarioService {

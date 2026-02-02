@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.drsprog.compras_api.DTOs.UsuarioRequest;
-import com.drsprog.compras_api.DTOs.UsuarioResponse;
+import com.drsprog.compras_api.dto.UsuarioRequest;
+import com.drsprog.compras_api.dto.UsuarioResponse;
 import com.drsprog.compras_api.entity.Usuario;
 import com.drsprog.compras_api.exception.UsuarioNotFoundException;
 import com.drsprog.compras_api.repository.UsuarioRepository;

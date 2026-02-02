@@ -1,4 +1,4 @@
-package com.drsprog.compras_api.DTOs;
+package com.drsprog.compras_api.dto;
 
 import java.math.BigDecimal;
 

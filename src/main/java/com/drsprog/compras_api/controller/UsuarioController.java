@@ -4,8 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.drsprog.compras_api.DTOs.UsuarioRequest;
-import com.drsprog.compras_api.DTOs.UsuarioResponse;
+import com.drsprog.compras_api.dto.UsuarioRequest;
+import com.drsprog.compras_api.dto.UsuarioResponse;
 import com.drsprog.compras_api.entity.Usuario;
 import com.drsprog.compras_api.service.UsuarioService;
 

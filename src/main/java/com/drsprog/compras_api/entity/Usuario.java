@@ -47,9 +47,18 @@ public class Usuario {
     @Builder.Default
     private LocalDateTime fechaCreacion = LocalDateTime.now();
 
+    @Column(name = "ACTIVO", nullable = false)
+    @Builder.Default
+    private Boolean activo = true;
+
     @PrePersist
     public void prePersist() {
-        this.fechaCreacion = LocalDateTime.now();
+        if (fechaCreacion == null) {
+            fechaCreacion = LocalDateTime.now();
+        }
+        if (this.activo == null) {
+            this.activo = true;
+        }
     }
 
 }

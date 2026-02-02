@@ -16,3 +16,7 @@ spring:
       hibernate:
         # format_sql: true version legible pero con warning amarillo
         "[format_sql]": true
+
+jwt:
+  secret: MI_CLAVE_SUPER_SECRETA_CAMBIAR
+  expiration: 3600000  # 1 hora en ms

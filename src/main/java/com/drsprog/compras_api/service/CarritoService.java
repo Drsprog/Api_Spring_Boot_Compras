@@ -1,7 +1,7 @@
 package com.drsprog.compras_api.service;
 
-import com.drsprog.compras_api.DTOs.AgregarProductoRequest;
-import com.drsprog.compras_api.DTOs.CarritoResponse;
+import com.drsprog.compras_api.dto.AgregarProductoRequest;
+import com.drsprog.compras_api.dto.CarritoResponse;
 
 public interface CarritoService {
 

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.drsprog.compras_api.DTOs.AgregarProductoRequest;
-import com.drsprog.compras_api.DTOs.CarritoResponse;
+import com.drsprog.compras_api.dto.AgregarProductoRequest;
+import com.drsprog.compras_api.dto.CarritoResponse;
 import com.drsprog.compras_api.service.CarritoService;
 
 import lombok.RequiredArgsConstructor;

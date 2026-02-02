@@ -3,8 +3,8 @@ package com.drsprog.compras_api.service.impl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.drsprog.compras_api.DTOs.AgregarProductoRequest;
-import com.drsprog.compras_api.DTOs.CarritoResponse;
+import com.drsprog.compras_api.dto.AgregarProductoRequest;
+import com.drsprog.compras_api.dto.CarritoResponse;
 import com.drsprog.compras_api.entity.Articulo;
 import com.drsprog.compras_api.entity.Carrito;
 import com.drsprog.compras_api.entity.DetalleCarrito;
