@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.drsprog.compras_api.dto.ActualizarUsuarioRequest;
 import com.drsprog.compras_api.dto.UsuarioRequest;
 import com.drsprog.compras_api.dto.UsuarioResponse;
 import com.drsprog.compras_api.entity.Usuario;
@@ -26,9 +27,9 @@ public class UsuarioController {
     }
     
     // Actualizar usuario
-    @PutMapping("/{id}")
-    public ResponseEntity<Usuario> actualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
-        Usuario actualizado = usuarioService.actualizarUsuario(id, usuario);
+    @PatchMapping("/{id}")
+    public ResponseEntity<UsuarioResponse> actualizarDatosUsuario(@PathVariable Long id, @RequestBody ActualizarUsuarioRequest request) {
+        UsuarioResponse actualizado = usuarioService.actualizarDatosUsuario(id, request);
         return ResponseEntity.ok(actualizado);
     }
 

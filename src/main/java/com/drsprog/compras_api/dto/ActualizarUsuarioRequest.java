@@ -1,6 +1,7 @@
 package com.drsprog.compras_api.dto;
 
 import java.time.LocalDate;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,12 +11,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsuarioResponse {
-    private Long id;
-    private String nombre;
+public class ActualizarUsuarioRequest {
+ private String nombre;
     private String apellido;
     private String email;
-    private String dni;
-    private LocalDate fechaNacimiento;
     private String telefono;
+    private LocalDate fechaNacimiento;
 }

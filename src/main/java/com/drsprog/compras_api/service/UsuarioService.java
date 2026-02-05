@@ -2,6 +2,8 @@ package com.drsprog.compras_api.service;
 
 import java.util.List;
 
+import com.drsprog.compras_api.dto.ActualizarUsuarioRequest;
+import com.drsprog.compras_api.dto.CambiarContrasenaRequest;
 import com.drsprog.compras_api.dto.UsuarioRequest;
 import com.drsprog.compras_api.dto.UsuarioResponse;
 import com.drsprog.compras_api.entity.Usuario;
@@ -18,8 +20,10 @@ public interface UsuarioService {
     List<Usuario> listarUsuarios();
 
     // Actualizar usuario
-    Usuario actualizarUsuario(Long id, Usuario usuarioActualizado);
+    UsuarioResponse actualizarDatosUsuario(Long id, ActualizarUsuarioRequest request);
 
     // Eliminar usuario
     void eliminarUsuario(Long id);
+
+    void cambiarContrasena(Long id, CambiarContrasenaRequest request);
 }
