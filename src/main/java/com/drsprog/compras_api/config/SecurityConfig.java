@@ -2,6 +2,7 @@ package com.drsprog.compras_api.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -29,7 +31,11 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 // Endpoints públicos
                 .authorizeHttpRequests(auth -> auth
+                        // auth
                         .requestMatchers("/auth/**").permitAll()
+                        // registro de usuario debe ser público
+                        .requestMatchers(HttpMethod.POST, "/usuarios").permitAll()
+                        // todo lo demás protegido
                         .anyRequest().authenticated())
                 // Filtro JWT antes del filtro de login
                 .addFilterBefore(

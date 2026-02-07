@@ -22,12 +22,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
     private final UserDetailsServiceImpl userDetailsServiceImpl;
 
+
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        return request.getServletPath().startsWith("/auth/");
+    }
+
     @Override
     protected void doFilterInternal(
             HttpServletRequest request,
             HttpServletResponse response,
             FilterChain filterChain)
             throws ServletException, IOException {
+
         final String authHeader = request.getHeader("Authorization");
         final String jwt;
         final String username;
@@ -58,7 +65,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                 authToken.setDetails(
                         new WebAuthenticationDetailsSource().buildDetails(request));
-                
+
                 // Usuario autenticado para Spring
                 SecurityContextHolder.getContext()
                         .setAuthentication(authToken);

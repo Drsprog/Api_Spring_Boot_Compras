@@ -10,6 +10,7 @@ import com.drsprog.compras_api.config.JwtProperties;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
 import java.security.Key;
@@ -62,6 +63,7 @@ public class JwtService {
 
     // Clave de firma
     private Key getSigningKey() {
+        System.out.println("JWT SECRET LENGTH = " + jwtProperties.getSecret().length());
         return Keys.hmacShaKeyFor(jwtProperties.getSecret().getBytes());
     }
 }

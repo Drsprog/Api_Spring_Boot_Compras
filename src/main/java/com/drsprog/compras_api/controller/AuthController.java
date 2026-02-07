@@ -27,12 +27,13 @@ public class AuthController {
     
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
-        
+        System.out.println("ENTRÓ AL LOGIN");
+
         // Autenticación
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getEmail(),
-                        request.getPassword()
+                        request.getContrasena()
                 )
         );
 
